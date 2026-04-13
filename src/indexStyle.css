@@ -1,0 +1,58 @@
+body {
+    background-color: #ffffdc; 
+}
+
+/*
+hr {
+    margin-bottom: 15%;
+}
+*/
+
+#title {
+    text-align: center;
+    color: black;
+}
+
+#searchBar {
+    margin: auto;
+    display: block;
+    background-color: #d9d9ba;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 25%;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-indent: 3%;
+
+}
+
+
+#map {
+    height: 640px;
+    bottom: 5px;
+}
+
+#adminLink {
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    text-decoration: none;
+    color: black;
+}
+
+#sidebar {
+    position: fixed;
+    background-color: ;
+    z-index: 1000;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    display: none;
+}
+
+#close:hover {
+    cursor: pointer;
+}
