@@ -9,18 +9,28 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 let flagObj = L.icon({
-    iconUrl: './flag.jpg',
-    iconSize:     [38, 95], // size of the icon
+    iconUrl: './flag.png',
+    iconSize:     [60, 95], // size of the icon
     shadowSize:   [50, 64], // size of the shadow
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
     shadowAnchor: [4, 62],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
+
 function flagClick(e) {
     console.log("clicked a marker");
     console.log(`${e.latlng}`);
-    sidebar.style.display = "inline"; 
+    sidebar.style.display = "inline";
+    let marginVal = 100;
+    let ti = setInterval(() => {
+        if (marginVal == 50) {
+            clearInterval(ti);
+        }
+        sidebar.style.margin = `0% 0% 0% ${marginVal}%`;
+        marginVal = marginVal - 1;
+    }, 10);
+    
 }
 
 L.marker([43.75, -71.68], {icon: flagObj}).addTo(map).on('click', flagClick);
