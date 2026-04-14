@@ -44,15 +44,27 @@ hr {
 
 #sidebar {
     position: fixed;
-    background-color: blue;
+    background-color: #9db39b;
     z-index: 1000;
     margin:0% 0% 0% 100%;
     width: 50%;
     height: 100%;
     top: 0;
     display: inline;
+    box-shadow: 10px 10px 10px 10px;
+}
+
+#close {
+    font-family: "Verdana";
+    display: inline-block; 
+    color: black;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
 }
 
 #close:hover {
+    background-color: rgba(0, 0, 0, .2);
     cursor: pointer;
 }

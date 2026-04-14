@@ -1,3 +1,7 @@
+//import { getAllPins, testImport } from './queries.js'
+
+//testImport();
+
 const sidebar = document.getElementById("sidebar");
 
 let map = L.map('map').setView([43.75, -71.68], 13);
@@ -17,21 +21,38 @@ let flagObj = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
+function drawPins() {
+    let pinData = getAllPins();
+    return;
+}
+L.marker([43.75, -71.68], {icon: flagObj}).addTo(map).on('click', flagClick);
+
+function renderPins(pinData) {
+    return; //COMING BACK TO THIS
+    sidebar.innerHTML += `
+    `;
+}
 
 function flagClick(e) {
     console.log("clicked a marker");
     console.log(`${e.latlng}`);
     sidebar.style.display = "inline";
     let marginVal = 100;
+    let marginInc = 1; 
     let ti = setInterval(() => {
-        if (marginVal == 50) {
+        if (marginVal <= 50) {
             clearInterval(ti);
         }
         sidebar.style.margin = `0% 0% 0% ${marginVal}%`;
-        marginVal = marginVal - 1;
-    }, 10);
+        marginVal = marginVal - marginInc;
+        if (marginInc > .01) {
+            marginInc = marginInc - .01;
+        }
+    }, 8);
+
+    renderPins(e) {
+    }
     
 }
 
-L.marker([43.75, -71.68], {icon: flagObj}).addTo(map).on('click', flagClick);
 
