@@ -1,6 +1,5 @@
 const mainDiv = document.getElementById("sidebar");
-
-mainDiv.innerHTML += `<p>TEST</p>`;
+const closeButton = document.getElementById("close");
 
 function closeSidebar() {
     let marginVal = 50;
@@ -17,4 +16,6 @@ function closeSidebar() {
     }, 10);
 }
 
-
+closeButton.addEventListener('click', () => {
+    closeSidebar();
+});

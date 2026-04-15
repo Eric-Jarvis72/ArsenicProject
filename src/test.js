@@ -1,4 +1,5 @@
 // test.js
+
 import { supabase } from './supabaseClient.js'  // note the .js on Node
 
 async function testSupabase() {
@@ -13,4 +14,8 @@ async function testSupabase() {
   }
 }
 
-testSupabase()
+
+
+export function testImport() {
+    console.log("hello from test.js");
+}

@@ -1,6 +1,8 @@
-//import { getAllPins, testImport } from './queries.js'
+import { testImport } from './test.js'
+import { getAllPins } from './queries.js'
+import './sidebar.js';
 
-//testImport();
+testImport();
 
 const sidebar = document.getElementById("sidebar");
 
@@ -13,7 +15,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 let flagObj = L.icon({
-    iconUrl: './flag.png',
+    iconUrl: './src/assets/flag.png',
     iconSize:     [60, 95], // size of the icon
     shadowSize:   [50, 64], // size of the shadow
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
@@ -21,13 +23,19 @@ let flagObj = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-function drawPins() {
-    let pinData = getAllPins();
+async function drawPins() {
+    let pinData = await getAllPins();
+    for (let ii = 0; ii < pinData.length; ii++) {
+        L.marker([pinData[ii]['lat'], pinData[ii]['long']], {icon: flagObj}).addTo(map).on('click', flagClick);
+    }
     return;
 }
-L.marker([43.75, -71.68], {icon: flagObj}).addTo(map).on('click', flagClick);
+drawPins();
 
-function renderPins(pinData) {
+/*
+ * used for getting the information for the sidebar
+ */
+function renderInfo(pinData) {
     return; //COMING BACK TO THIS
     sidebar.innerHTML += `
     `;
@@ -50,7 +58,7 @@ function flagClick(e) {
         }
     }, 8);
 
-    renderPins(e);
+    renderPinInfo(e);
     
 }
 
