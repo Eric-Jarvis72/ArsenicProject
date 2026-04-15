@@ -50,8 +50,7 @@ function flagClick(e) {
         }
     }, 8);
 
-    renderPins(e) {
-    }
+    renderPins(e);
     
 }
 
