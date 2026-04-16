@@ -16,7 +16,8 @@ hr {
 #searchBar {
     margin: auto;
     display: block;
-    background-color: #d9d9ba;
+    background-color: #242833;
+    color: white;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 25%;
