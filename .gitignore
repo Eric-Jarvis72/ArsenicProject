@@ -25,3 +25,6 @@ dist-ssr
 
 src/queries.js
 .env
+src/.env
+*.env
+
