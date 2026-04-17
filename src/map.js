@@ -3,7 +3,7 @@ import { getAllPins } from './queries.js'
 import './sidebar.js';
 
 testImport();
-
+//test coment
 const sidebar = document.getElementById("sidebar");
 
 let map = L.map('map').setView([43.75, -71.68], 13);
